@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!--Title-->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <a href="/" class="navbar-brand" style="color: white">
+          Angular Material C.R.U.D
+        </a>
+        <button mat-button [matMenuTriggerFor]="belowMenu">Create</button>
+        <mat-menu #aboveMenu="matMenu" yPosition="above">
+            <button mat-menu-item>Jhooomn</button>
+            <button mat-menu-item>GitHub</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="belowMenu">Read</button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>Jhooomn</button>
+            <button mat-menu-item>GitHub</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="beforeMenu">Update</button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item>Jhooomn</button>
+            <button mat-menu-item>GitHub</button>
+        </mat-menu>
+
+
+        <button mat-button [matMenuTriggerFor]="afterMenu">Delete</button>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+            <button mat-menu-item>Jhooomn</button>
+            <button mat-menu-item>GitHub</button>
+        </mat-menu>
+
+    </div>
+</nav>
+<!--Body-->
+<app-task></app-task>
+<router-outlet></router-outlet>

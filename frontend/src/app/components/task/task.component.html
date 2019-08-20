@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-4">
+            <div class="card" style="text-align:center;">
+                <div class="card-title mt-4"><strong>Add a Customer</strong></div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="First name" [(ngModel)]="customer.firstname" required=true>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="Last name" [(ngModel)]="customer.lastname" required=true>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput type="email" placeholder="E-mail" [(ngModel)]="customer.email" required=true>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary mr-1" (click)="addCustomer($event, customer)">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"><br></div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <table style="text-align: center;" class="table table-bordered">
+                        <tr>
+                            <td>
+                                <Strong>ID</Strong>
+                            </td>
+                            <td>
+                                <Strong>First-Name</Strong>
+                            </td>
+                            <td>
+                                <Strong>Last Name</Strong>
+                            </td>
+                            <td>
+                                <Strong>E-mail</Strong>
+                            </td>
+                            <td>
+                                <strong>Edit</strong>
+                            </td>
+                            <td>
+                                <strong>Delete</strong>
+                            </td>
+                        </tr>
+                        <tr *ngFor="let c of customerList">
+                            <td>{{c.id}}</td>
+                            <td>{{c.firstname}}</td>
+                            <td>{{c.lastname}}</td>
+                            <td>{{c.email}}</td>
+                            <td>
+                                <button mat-icon-button color="primary" aria-label="Example icon-button with a heart icon" (click)="editCustomer($event, c)">
+                                <i class="material-icons">edit</i>
+                                </button>
+                            </td>
+                            <td>
+                                <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon" (click)="deleteCustomer($event, c)">
+                                <i class="material-icons">clear</i>
+                                    </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

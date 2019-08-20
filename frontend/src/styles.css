@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* fallback for old browsers */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    background: linear-gradient(to right, #8e0e00, #1f1c18);
+}
