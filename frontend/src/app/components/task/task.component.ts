@@ -38,6 +38,8 @@ export class TaskComponent implements OnInit {
           timer: 1500
         });
       });
+      this.getCustomers();
+      this.ngOnInit();
     } else {
       this.service.updateCustomer(customer).subscribe(data => {
         swal.fire({
@@ -47,9 +49,9 @@ export class TaskComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
+        this.getCustomers();
+        this.ngOnInit();
       });
-      this.getCustomers();
-      this.ngOnInit();
     }
   }
 
